@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class Apresentacao extends javax.swing.JFrame {
 
-    ArrayList<Jogo> biblioteca = new ArrayList();
+   
      Jogo jogo = new Jogo();
     
     /**
@@ -154,6 +154,7 @@ public class Apresentacao extends javax.swing.JFrame {
         Tabela t;
         t = new Tabela();
         t.preencherTable();
+
    
        
     }//GEN-LAST:event_jButton2ActionPerformed

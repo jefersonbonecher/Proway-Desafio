@@ -6,6 +6,8 @@
 package Interface;
 
 import Jogo.Jogo;
+import Jogo.Placar;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -14,21 +16,29 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Tabela extends javax.swing.JFrame {
 private Jogo jogo = new Jogo();
+ ArrayList<Jogo> biblioteca = new ArrayList();
+ ArrayList<Placar> placar = new ArrayList();  
     /**
      * Creates new form Tabela
      */
     public Tabela() {
         initComponents();
     }
+      
+    
 
     public void preencherTable(){
         int jogos=-1;
-        
+         for (Placar p: this.placar){
+             
+         for (Jogo j: this.biblioteca){
      DefaultTableModel dtmDados = (DefaultTableModel) jTable1.getModel();
      
-     Object[] dados= {jogos++,jogo.placar(),jogo.temporadaMinima(),jogo.temporadaMaxima(),jogo.temporadaMinima(),jogo.quebraRecordeMax()};   
+     Object[] dados= {jogos++,p.getPlacar(),j.temporadaMinima(),j.temporadaMaxima(),j.temporadaMinima(),j.quebraRecordeMax()};   
     dtmDados.addRow(dados);
-    }  
+    } 
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,7 +56,7 @@ private Jogo jogo = new Jogo();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null}
             },
             new String [] {
                 "Jogo", "Placar", "Mínimo da temporada", "Máximo da temporada", "Quebra recorde min.", "Quebra recorde máx."
